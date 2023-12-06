@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  dev-postgres:
+    image: postgres:15.1-alpine # ポスグレを使用
+    ports:
+      - 5434:5432 # ホストコンピュータの5434番ポートをコンテナ内部のポスグレの5432番ポートにマッピング
+    environment: # 環境変数の設定
+      POSTGRES_USER: udemy
+      POSTGRES_PASSWORD: udemy
+      POSTGRES_DB: udemy
+    restart: always # コンテナが停止した場合（例えばDockerデーモンの再起動などによる）、常に再起動するように設定
+    networks:
+      - lesson
+networks:
+  lesson: # ネットワークの名前をlessonとする
