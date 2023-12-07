@@ -1,12 +1,13 @@
 package db
 
 import (
+	"fmt"
 	"log"
 	"os"
+
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"fmt"
 )
 
 func NewDB() *gorm.DB {
@@ -36,7 +37,3 @@ func CloseDB(db *gorm.DB) {
 		log.Fatal(err)
 	}
 }
-
-
-
-
