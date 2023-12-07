@@ -13,7 +13,7 @@ func NewDB() *gorm.DB {
 	if os.Getenv("GO_ENV") == "dev" {
 		err := godotenv.Load()
 		if err != nil {
-			// エラーメッ性を出力し強制終了
+			// エラーメッセージを出力し強制終了
 			log.Fatal(err)
 		}
 	}
